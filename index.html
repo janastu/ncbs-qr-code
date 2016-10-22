@@ -9,20 +9,25 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link type="text/css" rel="stylesheet" href="css/bootstrap.css" />
 		<link type="text/css" rel="stylesheet" href="css/theme/header.css" />
-		<link type="text/css" rel="stylesheet" href="css/theme/main.css" />
+		
 		
 		<script type='text/javascript' src='js/jquery.min.js'></script>
 		<script type="text/javascript" src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/classie.js"></script>
 
 <style type="text/css">
-
+body{
+overflow-x: hidden;
+}
 
 	table.tableizer-table {
 		font-size: 12px;
 		border: 3px;
   border-style: solid;
     border-color: #000000;
+    position: absolute;
+    
+    
 		
 	} 
 	.tableizer-table td {
@@ -38,35 +43,7 @@
 		font-weight: bold;
 		font-family: roboto, sans-serif;
 	}
-	#audio-bar{
 
-	
-	background-color: white;
-	
-
-	}
-	#audio{
-		background-color: white;
-		color:black;
-	}
-
-	#mug-shot{
-  		position:relative;
-  		top:30px;
-
-	}
-
-	#copyright{
-		border: 3px;
-  border-style: solid;
-    border-color: #000000;
-    background-color: white;
-    color:black;
-    margin: 15px;
-    padding: 15px;
-  
-
-	}
 </style>
 
 </head>
@@ -101,52 +78,31 @@ scrollEffect();
 
 
 <!--Header-->
-<div class=".col-xs-12">
-		<div class="row-fluid">
-			<!-- Header from templates/header.html and app.js -->
-				
-<header>
-    <div class="container clearfix">
-        <h1 id="logo">
-          <a href="https://www.ncbs.res.in/ncbs25/" target="">
+
+		
+		<!-- Header from templates/header.html and app.js -->
+		<header>
+    	<div class="container clearfix">
+        	<h1 id="logo">
+          	<a href="https://www.ncbs.res.in/ncbs25/" target="">
             <img src="img/Assets/ncbs_logo_introtext.png" alt="LOGO" />
-          </a>
-        </h1>
+          	</a>
+        	</h1>
        
-    </div>
-</header><!-- /header -->
-
-
+    	</div>
+		</header><!-- /header -->
 
 
 
 <!-- spacer -->
 <br><br><br><br>
 
-<!-- content -->
+    	<table class="tableizer-table" id='table'>
+	</table>
+	<br><br>
+   
 
 
-<!-- curatorial Note 
-<div class="row-fluid">
-    <div class="col-md-12">
-    	<div id='intro' style="font-size:12px; margin-top:-4px;">
-			<p><b>Oral History Metadata Synchronizer </b>is a widget to synchronize an interview transcript with the original oral history interview. Click on the timestamps to go directly to particular sections. In future versions of this widget, one could edit the transcript and encode annotations into an audio file. This is a sample of an interview of Obaid Siddiqi conducted by Indiaira Chowdhury where he discusses his entry into neurobiology. 
-			</p>
-			
-		</div>
-	</div>
-</div>	-->
-		
-
-
-
-
-    <div class=".col-xs-12" style='margin:-5px;'>
-
-<table class="tableizer-table" id='table'>
-</table>
-<br><br>
-</div>
 
 
 
@@ -303,13 +259,13 @@ scrollEffect();
 	"<thead><tr class='tableizer-firstrow'><th><center></center></th></tr></thead><tbody>"+
 	"<% _.each(data, function(item, index, data) { %>"+
 		"<tr><td>"+
- 		"<div id = 'mug-shot'><center><figure>"+
+ 		"<br><div id = 'mug-shot'><center><figure>"+
  		"<img style='border:1px;border-style:solid;border-color:#000000;width:400px;height:auto;' src=<%=item.ImageUrl%> />"+
-		"<figcaption style='color:black; font-size:20px'><%=item.ImageCaption%></figcaption></figure></center></div><br><br>"+
+		"<figcaption style='color:black; font-size:20px'><%=item.ImageCaption%></figcaption></figure></center></div><br>"+
 		"<div id='audio-bar'><center><audio controls id='audio' preload='auto'>"+
  		"<source src=<%=item.AudioUrl%> type='audio/mpeg'/></audio></center></div>"+
- 		"<p><center><%=item.AudioCaption%></center></p>"+
- 		"<h6><center><%=item.AudioRights%></center></h6>"+
+ 		"<h4><center><%=item.AudioCaption%></center</h4>"+
+ 		"<h6><center><%=item.AudioRights%></center></h6><br>"+
  		"</td>"+
 		"</tr>"+
 		" <% }); %> "+
